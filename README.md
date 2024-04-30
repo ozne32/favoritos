@@ -18,7 +18,7 @@ logins não tenha muita finalidade prática, foi só para colocar os conceitos d
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu_usuario/nome-do-projeto.git
-2. vá até o arquivo index.html e abra-0
+2. vá até o arquivo index.html e abra-o
 
 ## Contribuições são sempre bem vindas
 Se quiser pode dar fork do meu projeto e melhora-lo estou sempre disposto a ouvir as críticas
