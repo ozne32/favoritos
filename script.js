@@ -3,21 +3,27 @@ class Perfil{
         this.senha = senha
         this.hobbie = hobbie
     }
-}//não precisei para realizar o cadastro, porém é legal eu deixar na manga
+}
 function cadastrar(){
     let senha = document.getElementById('senha-sign')
+    let confirmaSenha = document.getElementById('senha-sign-confirma')
     let username = document.getElementById('username-sign')
     let hobbie = document.getElementById('hobbie')
     let perfil = new Perfil(senha.value, hobbie.value)
     if(localStorage.getItem(username)){
         alert('este nome de usuário já existe')
-    }else{
+    }else if(senha.value == confirmaSenha.value && senha.value != '' && username.value != '' && tipo.value != 0){
         localStorage.setItem(username.value, JSON.stringify(perfil))
         alert('você se cadastrou, boa')
         senha.value = ''
         username.value = ''
         hobbie.value = 0
+        confirmaSenha.value = ''
 
+    }else if(senha.value != confirmaSenha.value){
+        alert('você não colocou a mesma senha nos dois blocos')
+    }else{
+        alert('preencha todos os campos')
     }
 }
 function verificar(){
@@ -53,24 +59,30 @@ function carregarImagens(){
         'Enteda o fenômeno dos gyms tiktokers','Como o contato com vários esportes podem influenciar o adolescente na vida adulta','volei, conheça o esporte que vem tomando o coração dos brasileiros',
         'Ministério do Esporte, comenta sobre os riscos de uma vida sedentária']
         for(let i in imagens){
-            let btn = document.createElement('button')
-            btn.className = 'btn btn-primary'
-            btn.innerHTML = '<i class="fa-regular fa-bookmark"></i>'
             let coisa = document.getElementById(`noticia${parseInt(i)+1}`)
             coisa.innerHTML=  `<img class="img-fluid pt-5 pr-5 pl-5 pb-0 mb-0" src="imagens/${imagens[i]}"><p> ${descricao[i]}</p>`    
-            coisa.appendChild(btn)
         }
     }else if(hobbie =='videogame'){
-        let imagens = ['eu','gosto','muito','de','videogames','eeee']
+        let imagens = ['videogames.jpg','videogames.jpg','videogames.jpg','videogames.jpg','videogames.jpg','videogames.jpg']
         for(let i in imagens ){
             let coisa = document.getElementById(`noticia${parseInt(i)+1}`)
-            coisa.innerHTML=imagens[i]    
+            coisa.innerHTML=`<img class="img-fluid pt-5 pr-5 pl-5 pb-0 mb-0" src="imagens/${imagens[i]}">`    
         }
     }else if(hobbie =='artes'){
-        let imagens = ['eu','gosto','muito','de','artes','eeee']
+        let imagens = ['aquarela.jpg','artes.jpg','banner.jpg','close-up-woman-painting.jpg','mulherSentada.jpg','aquarela.jpg']
+    
         for(let i in imagens ){
             let coisa = document.getElementById(`noticia${parseInt(i)+1}`)
-            coisa.innerHTML=imagens[i]    
+            coisa.innerHTML=`<img class="img-fluid pt-5 pr-5 pl-5 pb-0 mb-0" src="imagens/${imagens[i]}">`    
         }
+    }
+}
+function verificarSenha(){
+    senha = document.getElementById('senha-sign')
+    confirmaSenha = document.getElementById('senha-sign-confirma')
+    if(senha.value != confirmaSenha.value){
+        confirmaSenha.style.backgroundColor= 'rgb(251, 118, 118)'
+    }else{
+        confirmaSenha.style.backgroundColor = 'rgb(93, 230, 93)' 
     }
 }

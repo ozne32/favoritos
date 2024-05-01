@@ -14,7 +14,7 @@
      <script src="script.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu">
                 <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,38 @@
         </div>
     </nav>
     <div class="container">
-        <h1 class="display-3">Fique por dentro das suas coisas favoritas</h1>
+        <h1 class="display-4">Fique por dentro das suas coisas favoritas</h1>
+        <div id="carousel-controles" class="carousel slide" data-ride="carousel" ><!--começo carousel slide -->
+            <div class="carousel-inner m-3"><!--começo carousel inner-->
+              <div class="carousel-item active">
+                <img src="imagens/sports-tools.jpg" class="img-fluid">
+                <div class="carousel-caption">
+                    <h1 class="display-2 text-weight-bold" style="color: rgba(255, 255, 255, 0.849); margin-bottom: 40%; letter-spacing: 10px;">Esportes</h1>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagens/aquarela.jpg" class="img-fluid">
+                <div class="carousel-caption">
+                    <h1 class="display-2 text-weight-bold" style="color: rgba(255, 255, 255, 0.849); margin-bottom: 40%; letter-spacing: 10px;">Artes</h1>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="imagens/videogames.jpg" class="img-fluid">
+                <div class="carousel-caption">
+                    <h1 class="display-2 text-weight-bold" style="color: rgba(255, 255, 255, 0.849); margin-bottom: 40%; letter-spacing: 10px;">Videogames</h1>
+                </div>
+              </div>
+            </div><!--final carousel inner-->
+            <!--botão-->
+            <a href="#carousel-controles" class="carousel-control-prev" data-slide="prev"><!--aqui nós indicamos
+            qual que é a div que está com o carousel, para o bootstrap saber onde ele tem que mexer-->
+                <i class="fa-solid fa-angle-left fa-3x text-dark"></i>
+            </a>
+            <a href="#carousel-controles" class="carousel-control-next" data-slide="next">
+                <i class="fa-solid fa-angle-right fa-3x text-dark"></i>
+            </a>
+          </div><!--final de carousel slide-->
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
