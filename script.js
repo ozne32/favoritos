@@ -12,7 +12,7 @@ function cadastrar(){
     let perfil = new Perfil(senha.value, hobbie.value)
     if(localStorage.getItem(username)){
         alert('este nome de usuário já existe')
-    }else if(senha.value == confirmaSenha.value && senha.value != '' && username.value != '' && tipo.value != 0){
+    }else if(senha.value == confirmaSenha.value && senha.value != '' && username.value != '' && hobbie.value != 0){
         localStorage.setItem(username.value, JSON.stringify(perfil))
         alert('você se cadastrou, boa')
         senha.value = ''
